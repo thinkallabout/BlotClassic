@@ -5,12 +5,13 @@ import os
 from blot.path import path
 from blot.conf import conf
 from blot.env import create
+from blot.template import get
 
-default_path = os.getcwd() + '/blot'
+default_path = os.getcwd() + '/blot_site'
 
 class Blot():
 	""" Configuration container """
-	def compile():
+	def compile(self):
 		pass
 
 	def __init__(self, base):
@@ -24,3 +25,7 @@ class Blot():
 
 		# Global site vars for Jinja2
 		self.glob = {}
+
+		# Dictionary with templates
+		self.templates = template.get(
+					self.path.templates)
