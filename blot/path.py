@@ -8,6 +8,6 @@ class path():
 			os.mkdir(self.path)
 
 		# Default dirs
-		self.images = path + os.path.join('images')
-		self.posts = path + os.path.join('posts')
-		self.templates = path + os.path.join('templates')
+		self.images = os.path.join(path, 'images')
+		self.posts = os.path.join(path, 'posts')
+		self.templates = os.path.join(path, 'templates')
