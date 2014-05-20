@@ -1,17 +1,15 @@
 from blot import Blot
 import os
 
-root_dir = os.getcwd() + '/src/img'
+root_dir = os.getcwd() + '/src'
+scripts = root_dir + '/scripts'
 site = Blot(root_dir)
 
-site.path.images = os.getcwd() + '/src/img'
-site.path.posts = os.getcwd() + '/src/posts'
-site.path.templates = os.getcwd() + '/src/templates'
-site.path.include = os.getcwd() + '/src/include'
+site.path.images = root_dir + '/img'
+site.path.posts = root_dir + '/posts'
+site.path.templates = root_dir + '/templates'
 
-site.conf.output = os.getcwd() + '/bin'
+site.conf.output = root_dir + '/bin'
 
-site.conf.title = 'Site Title'
-site.conf.description = 'Site Description'
-
-#site.compile()
+if __name__ == '__main__':
+	site.compile()
