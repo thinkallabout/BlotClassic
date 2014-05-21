@@ -1,7 +1,7 @@
 {
 	"_compile": {
 		"url": "some-post",
-		"template": "blot_post.html"
+		"template": "post.html"
 	},
 	"_post": {
 		"main": "main.md",
