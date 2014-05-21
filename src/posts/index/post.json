@@ -1,0 +1,11 @@
+{
+	"_compile": {
+		"url": "",
+		"template": "index.html",
+		"main": "main.md"
+	},
+	"_post": {
+		"author": "Cameron Brown",
+		"anything": "you want"
+	}
+}
