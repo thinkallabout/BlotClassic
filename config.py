@@ -1,6 +1,8 @@
 from blot import Blot
 import os
 
+print ' * Starting website'
+
 root_dir = os.getcwd() + '/src/'
 site = Blot(root_dir)
 
