@@ -12,21 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os, sys
-
-def compile():
-	pass
-
-def get(folder):
-	try:
-		templates = os.listdir(folder)
-	except OSError:
-		os.mkdir(folder)
-		print ' * Creating folder "' + folder + '"'
-		templates = os.listdir(folder)
-
-	if len(templates) == 0:
-		print ' * No templates in folder'
-		sys.exit(0)
-
-	return templates
+class Template():
+	""" Jinja2 template file """
+	def __init__(self):
+		pass
