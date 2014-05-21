@@ -20,4 +20,4 @@ class Template():
 		self.path = os.path.join(blot.path.path, 'templates', path)
 		self.name = path
 
-		self.content = open(self.path)
+		self.content = blot.conf.env.get_template(self.name)

@@ -12,8 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from blot.env import create_env
+
 class conf():
-	def __init__(self, conf, path):
-		self.conf = conf
+	def __init__(self, path, blot):
 		self.output = path.path + '/bin'
-		self.env = False # Jinja2 env
+		self.env = create_env(path)# Jinja2 env
