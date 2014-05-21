@@ -6,6 +6,7 @@ from blot.path import path
 from blot.conf import conf
 from blot.env import create
 from blot.template import get
+from blot.post import Post, find_types
 
 default_path = os.path.join(os.getcwd(), 'website')
 
@@ -29,3 +30,6 @@ class Blot():
 		# Dictionary with templates
 		self.templates = template.get(
 					self.path.templates)
+		# Posts & post types
+		self.posts = post.Post(self)
+		self.posts.types = post.find_types(self)
