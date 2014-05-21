@@ -41,3 +41,13 @@ class Blot():
 
 		# Global site vars for Jinja2
 		self.glob = {}
+
+		# Template container
+		self.templates = []
+		for template in os.listdir(self.path.templates):
+			self.templates.append(Template(self, template))
+
+		# Posts container
+		self.posts = []
+		for post in os.listdir(self.path.posts):
+			self.posts.append(Post(self, post))

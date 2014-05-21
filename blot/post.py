@@ -16,17 +16,14 @@ import os
 import json
 
 class Post():
-	""" Blog post, page or something else """
-	def render(self):
-		
-
-	def __init__(self, blot):
+	""" Blog post, page or something else """		
+	def __init__(self, blot, path):
 		# Template path
 		self.path = path
 
 		# Config file
 		self.config = json.load(open(
-			os.path.join(blot.path.path, 'post.json')))
+			os.path.join(blot.path.path, blot.path.posts, self.path, 'post.json')))
 
 		# Template name
 		self.template = self.config['_compile']['template']

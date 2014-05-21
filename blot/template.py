@@ -16,6 +16,8 @@ import os
 
 class Template():
 	""" Template file """
-	def __init__(self, path):
-		self.path = path
-		self.name = os.path.splitext(path)[0]
+	def __init__(self, blot, path):
+		self.path = os.path.join(blot.path.path, 'templates', path)
+		self.name = path
+
+		self.content = open(self.path)
