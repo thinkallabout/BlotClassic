@@ -18,15 +18,15 @@ import json
 class Post():
 	""" Blog post, page or something else """		
 	def __init__(self, blot, path):
-		# Template path
 		self.path = path
-
-		# Config file
 		self.config = json.load(open(
 			os.path.join(blot.path.path, blot.path.posts, self.path, 'post.json')))
 
-		# Template name
-		self.template = self.config['_compile']['template']
+		# Template
+		for i in blot.templates:
+			if i.name == self.config['_compile']['template']:
+				self.template = i.content
+				break
 
 		# Post URL (relative to "/")
 		self.url = self.config['_compile']['url']
