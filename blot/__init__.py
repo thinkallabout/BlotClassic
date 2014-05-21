@@ -15,6 +15,8 @@
 """ Basic configuration settings for blot """
 
 import os
+import shutil
+import errno
 
 from blot.path import path
 from blot.conf import conf
@@ -33,8 +35,18 @@ class Blot():
 		except OSError:
 			pass
 
+		# Create posts
 		for post in self.posts:
 			compile_post(self, post, post.var)
+
+		# Copy static folder
+		for item in os.listdir(self.path.static):
+			s = os.path.join(self.path.static, item)
+			d = os.path.join(self.conf.output, item)
+		if os.path.isdir(s):
+			shutil.copytree(s, d, False, None)
+		else:
+			shutil.copy2(s, d)
 
 	def __init__(self, base=default_path):
 		# Path to working folder
