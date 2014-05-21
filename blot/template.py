@@ -14,21 +14,10 @@
 
 import os
 
-class path():
-	def make_dirs(self):
-		# Create folder structure
-		os.mkdir(self.path)
-		os.mkdir(os.path.join(self.path, 'static'))
-		os.mkdir(os.path.join(self.path, 'posts'))
-		os.mkdir(os.path.join(self.path, 'templates'))
+class Template():
+	""" Template file """
+	def __init__(self, blot, path):
+		self.path = os.path.join(blot.path.path, 'templates', path)
+		self.name = path
 
-	def __init__(self, path):
-		""" Set Blot working directory """
-		self.path = path
-		if os.path.exists(self.path) != True:
-			self.make_dirs()
-
-		# Default dirs
-		self.static = os.path.join(path, 'static')
-		self.posts = os.path.join(path, 'posts')
-		self.templates = os.path.join(path, 'templates')
+		self.content = blot.conf.env.get_template(self.name)

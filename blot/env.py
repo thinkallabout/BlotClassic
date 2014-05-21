@@ -12,23 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
+from jinja2 import Environment, FileSystemLoader
 
-class path():
-	def make_dirs(self):
-		# Create folder structure
-		os.mkdir(self.path)
-		os.mkdir(os.path.join(self.path, 'static'))
-		os.mkdir(os.path.join(self.path, 'posts'))
-		os.mkdir(os.path.join(self.path, 'templates'))
+def create_env(path):
+	""" Create a new Jinja2 env """
+	loader = FileSystemLoader(path.templates)
+	env = Environment(loader=loader)
 
-	def __init__(self, path):
-		""" Set Blot working directory """
-		self.path = path
-		if os.path.exists(self.path) != True:
-			self.make_dirs()
-
-		# Default dirs
-		self.static = os.path.join(path, 'static')
-		self.posts = os.path.join(path, 'posts')
-		self.templates = os.path.join(path, 'templates')
+	# Set blot.conf.env to Jinja env
+	return env

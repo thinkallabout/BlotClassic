@@ -13,22 +13,18 @@
 # limitations under the License.
 
 import os
+import markdown
 
-class path():
-	def make_dirs(self):
-		# Create folder structure
-		os.mkdir(self.path)
-		os.mkdir(os.path.join(self.path, 'static'))
-		os.mkdir(os.path.join(self.path, 'posts'))
-		os.mkdir(os.path.join(self.path, 'templates'))
+def compile_post(blot, post, args):
+	env = blot.conf.env
+	try:
+		os.mkdir(os.path.join(blot.conf.output, post.url))
+	except OSError:
+		pass
 
-	def __init__(self, path):
-		""" Set Blot working directory """
-		self.path = path
-		if os.path.exists(self.path) != True:
-			self.make_dirs()
-
-		# Default dirs
-		self.static = os.path.join(path, 'static')
-		self.posts = os.path.join(path, 'posts')
-		self.templates = os.path.join(path, 'templates')
+	html = open(os.path.join(blot.conf.output, post.url, 'index.html'), 'w')
+	content = markdown.markdown(post.main)
+	args['main'] = content
+	template = env.get_template(post.template)
+	html.write(template.render(args))
+	html.close()
