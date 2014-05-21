@@ -1,10 +1,10 @@
 {
 	"_compile": {
 		"url": "some-post",
-		"template": "post.html"
+		"template": "post.html",
+		"main": "main.md"
 	},
 	"_post": {
-		"main": "main.md",
 		"author": "Cameron Brown",
 		"anything": "you want"
 	}

@@ -21,6 +21,8 @@ class Post():
 		self.path = path
 		self.config = json.load(open(
 			os.path.join(blot.path.path, blot.path.posts, self.path, 'post.json')))
+		self.main = open(os.path.join(
+			blot.path.posts, self.path, self.config['_compile']['main'])).read()
 
 		# Template
 		for i in blot.templates:
@@ -33,5 +35,6 @@ class Post():
 
 		# Template variables
 		self.var = {}
+		self.var['main'] = self.main
 		for var in self.config['_post']:
 			self.var[var] = self.config['_post'][var]

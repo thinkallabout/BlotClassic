@@ -27,9 +27,14 @@ default_path = os.path.join(os.getcwd(), 'website')
 class Blot():
 	""" Configuration container """
 	def compile(self):
+		print ' * Compiling site'
+		try:
+			os.mkdir(os.path.join(self.path.path, 'bin'))
+		except OSError:
+			pass
+
 		for post in self.posts:
-			t = self.conf.env.get_template(post.template)
-			print t.render(post.var)
+			compile_post(self, post, post.var)
 
 	def __init__(self, base=default_path):
 		# Path to working folder

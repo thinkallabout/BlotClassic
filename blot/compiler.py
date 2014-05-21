@@ -12,7 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import os
+import markdown
+
 def compile_post(blot, post, args):
 	env = blot.conf.env
+	try:
+		os.mkdir(os.path.join(blot.conf.output, post.url))
+	except OSError:
+		pass
 
-	
+	html = open(os.path.join(blot.conf.output, post.url, 'index.html'), 'w')
+	content = markdown.markdown(post.main)
+	args['main'] = content
+	template = env.get_template(post.template)
+	html.write(template.render(args))
+	html.close()
