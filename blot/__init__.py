@@ -7,6 +7,7 @@ from blot.conf import conf
 from blot.env import create
 from blot.template import get
 from blot.post import Post, find_types
+from blot.compiler import compiler
 
 default_path = os.path.join(os.getcwd(), 'website')
 
