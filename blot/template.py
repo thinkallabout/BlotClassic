@@ -12,7 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import os
+
 class Template():
-	""" Jinja2 template file """
-	def __init__(self):
-		pass
+	""" Template file """
+	def __init__(self, path):
+		self.path = path
+		self.name = os.path.splitext(path)[0]

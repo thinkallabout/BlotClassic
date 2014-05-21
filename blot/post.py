@@ -13,8 +13,28 @@
 # limitations under the License.
 
 import os
+import json
 
 class Post():
 	""" Blog post, page or something else """
-	def __init__(self):
-		pass
+	def render(self):
+		
+
+	def __init__(self, blot):
+		# Template path
+		self.path = path
+
+		# Config file
+		self.config = json.load(open(
+			os.path.join(blot.path.path, 'post.json')))
+
+		# Template name
+		self.template = self.config['_compile']['template']
+
+		# Post URL (relative to "/")
+		self.url = self.config['_compile']['url']
+
+		# Template variables
+		self.var = {}
+		for var in self.config['_post']:
+			self.var[var] = self.config['_post'][var]
