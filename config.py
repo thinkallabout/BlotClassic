@@ -10,7 +10,5 @@ site.path.templates = root_dir + '/templates/'
 
 site.conf.output = root_dir + '/bin/'
 
-print site.templates
-
 if __name__ == '__main__':
 	site.compile()
