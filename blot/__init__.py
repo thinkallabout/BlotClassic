@@ -17,6 +17,7 @@
 import os
 import shutil
 import errno
+import operator
 
 from blot.path import path
 from blot.conf import conf
@@ -28,12 +29,24 @@ default_path = os.path.join(os.getcwd(), 'website')
 
 class Blot():
 	""" Configuration container """
+	def sort_posts(self):
+		# Sort posts by timestamp
+		self.posts.sort(
+			key = operator.attrgetter('timestamp'))
+
+		reversed_posts = []
+		for post in reversed(self.posts):
+			reversed_posts.append(post)
+		self.posts = reversed_posts
+
 	def compile(self):
 		print ' * Compiling site'
 		try:
-			os.mkdir(os.path.join(self.path.path, 'bin'))
+			path.make_dirs(self.path)
 		except OSError:
 			pass
+
+		self.sort_posts()
 
 		# Create posts
 		for post in self.posts:
@@ -41,12 +54,12 @@ class Blot():
 
 		# Copy static folder
 		for item in os.listdir(self.path.static):
-			s = os.path.join(self.path.static, item)
-			d = os.path.join(self.conf.output, item)
-		if os.path.isdir(s):
-			shutil.copytree(s, d, False, None)
+			src = os.path.join(self.path.static, item)
+			dest = os.path.join(self.conf.output, item)
+		if os.path.isdir(src):
+			shutil.copytree(src, dest, False, None)
 		else:
-			shutil.copy2(s, d)
+			shutil.copy2(src, dest)
 
 	def __init__(self, base=default_path):
 		# Path to working folder
@@ -55,9 +68,6 @@ class Blot():
 		# Blot configuration
 		self.conf = conf(self.path, self) # Container
 		self.conf.output = os.path.join(self.path.path, 'bin') # Output path
-
-		# Global site vars for Jinja2
-		self.glob = {}
 
 		# Template container
 		self.templates = []
@@ -68,3 +78,6 @@ class Blot():
 		self.posts = []
 		for post in os.listdir(self.path.posts):
 			self.posts.append(Post(self, post))
+
+		# Global site vars for Jinja2
+		self.glob = {"site": self}

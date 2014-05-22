@@ -13,7 +13,6 @@
 # limitations under the License.
 
 import os
-import markdown
 
 def compile_post(blot, post, args):
 	env = blot.conf.env
@@ -23,8 +22,7 @@ def compile_post(blot, post, args):
 		pass
 
 	html = open(os.path.join(blot.conf.output, post.url, 'index.html'), 'w')
-	content = markdown.markdown(post.main)
-	args['main'] = content
+	args['site'] = blot
 	template = env.get_template(post.template)
 	html.write(template.render(args))
 	html.close()
