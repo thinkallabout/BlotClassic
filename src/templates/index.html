@@ -1,4 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-{{ main }}
+	{% for post in site.posts[:5] %}
+		<h1>{{ post.title }}</h1>
+		<p>Written {{ post.timestamp }}</p>
+		<p>{{ post.main }}</p>
+	{% endfor %}
 {% endblock %}

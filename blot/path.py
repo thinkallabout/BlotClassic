@@ -21,12 +21,11 @@ class path():
 		os.mkdir(os.path.join(self.path, 'static'))
 		os.mkdir(os.path.join(self.path, 'posts'))
 		os.mkdir(os.path.join(self.path, 'templates'))
+		os.mkdir(self.conf.output)
 
 	def __init__(self, path):
 		""" Set Blot working directory """
 		self.path = path
-		if os.path.exists(self.path) != True:
-			self.make_dirs()
 
 		# Default dirs
 		self.static = os.path.join(path, 'static')

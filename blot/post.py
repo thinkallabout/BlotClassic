@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import os
+import markdown
 import json
 
 class Post():
@@ -21,8 +22,8 @@ class Post():
 		self.path = path
 		self.config = json.load(open(
 			os.path.join(blot.path.path, blot.path.posts, self.path, 'post.json')))
-		self.main = open(os.path.join(
-			blot.path.posts, self.path, self.config['_compile']['main'])).read()
+		self.main = markdown.markdown(open(os.path.join(
+			blot.path.posts, self.path, self.config['_compile']['main'])).read())
 
 		# Template
 		for i in blot.templates:
@@ -32,6 +33,7 @@ class Post():
 
 		# Post URL (relative to "/")
 		self.url = self.config['_compile']['url']
+		self.timestamp = self.config['_compile']['timestamp']
 
 		# Template variables
 		self.var = {}
