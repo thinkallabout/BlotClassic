@@ -20,7 +20,7 @@ def compile_post(blot, post, args):
 		os.mkdir(os.path.join(blot.conf.output, post.url))
 	except OSError:
 		pass
-
+    
 	html = open(os.path.join(blot.conf.output, post.url, 'index.html'), 'w')
 	args['site'] = blot
 	template = env.get_template(post.template)
