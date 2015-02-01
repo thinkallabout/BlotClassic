@@ -1,5 +1,6 @@
 {
-	"site": {
-		/* Stuff to come */
-	}
+    "title": "Site Title",
+    "author": "Author Name",
+    "twitter": "@twitter",
+    "copyright": "&copy 2015"
 }

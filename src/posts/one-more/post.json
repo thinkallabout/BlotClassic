@@ -1,0 +1,14 @@
+{
+	"_compile": {
+		"url": "one-more",
+		"template": "post.html",
+		"main": "main.md",
+		"timestamp": "05/04/2014"
+	},
+	"_post": {
+        "title": "Fusce massa erat",
+        "date": "05/04/2014",
+		"author": "Cameron Brown",
+        "summary": "In mauris mi, consectetur sed blandit quis"
+	}
+}

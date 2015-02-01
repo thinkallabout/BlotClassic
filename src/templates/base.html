@@ -1,12 +1,49 @@
 <!doctype html>
 <html>
 <head>
-	<title>{{ title }}</title>
+	<title>{{ site.config.title }}</title>
 	<meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' 
+          rel='stylesheet' type='text/css'>
+
+    {% if is_root %}
+        <link href="main.css" rel="stylesheet">
+    {% else %}
+        <link href="../main.css" rel="stylesheet">
+    {% endif %}
 </head>
 <body>
-	<h1>Blot website</h1>
-	{% block content %}
-	{% endblock %} 
+    <div id="container">
+        <header id="site-header">
+            <h1 id="site-title">
+                <a href="{{ site.conf.output }}index.html">
+                    {{ site.config.title }}
+                </a>
+            </h1>
+        </header>
+        <main id="site-main">
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer id="site-footer">
+            <p>
+                <a href="https://twitter.com/{{ site.config.twitter }}" 
+                   class="twitter-follow-button" 
+                   data-show-count="false" 
+                   data-size="large">Follow @thinkallabout</a>
+            </p>
+            <p id="site-footer-nav">
+                <a href="#">About</a>
+                <a href="#">Posts</a>                        
+                <a href="#">Photography</a>
+                <a href="#">Projects</a>
+            </p>
+            <p id="site-footer-copyright">
+                {{ site.config.copyright }} {{ site.config.author }}
+            </p>
+        </footer>
+    </div>
+    
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </body>
 </html>
