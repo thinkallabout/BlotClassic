@@ -1,8 +1,30 @@
 {% extends "base.html" %}
+{% set is_root = True %}
 {% block content %}
-	{% for post in site.posts[:5] %}
-		<h1>{{ post.title }}</h1>
-		<p>Written {{ post.timestamp }}</p>
-		<p>{{ post.main }}</p>
+	{% for post in site.posts[:site.posts|length] %}
+        {% if post.var.title == "" %}
+            <div id="site-home-intro">
+                {{ post.main }}
+            </div>
+        {% endif %}
+	{% endfor %}
+	{% for post in site.posts[:8] if not site.posts.title == "" %}    
+        {% if post.var.title != "" %}
+            <div style="padding-top: 15px;padding-bottom: 15px;clear: both;
+                        width: 100%;min-height: 20px">
+                <h3 style="float: left;padding: 0;margin: 0;
+                           font-size: 15px;font-weight: normal;">
+                    <a href="{{ post.url }}/index.html" class="site-post-link">
+                        {{ post.var.title }}
+                    </a>
+                </h3>
+                <p style="float: left;padding: 0;margin: 0;padding-left: 25px">
+                    {{ post.var.summary }}
+                </p>
+                <p style="float: right;padding: 0;margin: 0;">
+                    {{ post.timestamp }}
+                </p>
+            </div>
+        {% endif %}
 	{% endfor %}
 {% endblock %}

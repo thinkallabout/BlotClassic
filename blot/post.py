@@ -35,6 +35,8 @@ class Post():
 		self.url = self.config['_compile']['url']
 		self.timestamp = self.config['_compile']['timestamp']
 
+                self.is_post = True
+
 		# Template variables
 		self.var = {}
 		self.var['main'] = self.main

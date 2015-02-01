@@ -18,7 +18,6 @@ import os
 import shutil
 import errno
 import operator
-import json
 
 from blot.path import path
 from blot.conf import conf
@@ -57,10 +56,10 @@ class Blot():
 		for item in os.listdir(self.path.static):
 			src = os.path.join(self.path.static, item)
 			dest = os.path.join(self.conf.output, item)
-		        if os.path.isdir(src):
-			    shutil.copytree(src, dest, False, None)
-		        else:
-			    shutil.copy2(src, dest)
+		if os.path.isdir(src):
+			shutil.copytree(src, dest, False, None)
+		else:
+			shutil.copy2(src, dest)
 
 	def __init__(self, base=default_path):
 		# Path to working folder
@@ -79,10 +78,6 @@ class Blot():
 		self.posts = []
 		for post in os.listdir(self.path.posts):
 			self.posts.append(Post(self, post))
-        
-                self.config = json.load(open(
-                    os.path.join(self.path.path, 'config.json')))
 
-                # Global site vars for Jinja2
+		# Global site vars for Jinja2
 		self.glob = {"site": self}
-

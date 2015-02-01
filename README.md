@@ -10,3 +10,4 @@ Blot is a simple, but flexible static website generator. That means you can have
 * Uses Markdown syntax
 * Custom templates with Jinja2
 * Super secure - nothing to hack
+* Written like a library

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Site Title</title>
+	<title>Lorem ipsum dolor</title>
 	<meta charset="UTF-8">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' 
           rel='stylesheet' type='text/css'>
@@ -24,8 +24,8 @@
 
 <!-- Change in post.json -->
 <article>
-    <h1 class="post-title">Mauris euismod vel</h1>
-    <p class="post-timestamp">Written 15/03/2014</p>
+    <h1 class="post-title">Lorem ipsum dolor</h1>
+    <p class="post-timestamp">Written 25/02/2014</p>
     <p class="post-content"><p>This is my <strong>awesome</strong> website! Made with <a href="http://www.github.com/thinkallabout/blot">blot</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et lorem eu nulla porttitor ornare. Aliquam vulputate nunc non sem bibendum scelerisque a quis lectus. Aenean ultricies justo eu vehicula volutpat. Nam auctor justo in diam malesuada tincidunt. Nam varius vitae leo nec tincidunt. Suspendisse sagittis quam tellus, id ultrices purus porta ac. Integer at urna vitae est mollis mollis nec id nisi. Nunc faucibus risus eu sagittis vestibulum. Ut ut rutrum diam. Quisque pulvinar elit urna, sit amet fringilla dui feugiat dapibus. Phasellus venenatis urna nisl, sit amet pellentesque neque porttitor et.</p>
 <p>Sed scelerisque, justo a porttitor accumsan, tortor est consectetur massa, at imperdiet turpis sem nec nisi. Aenean ex metus, suscipit eu odio at, tincidunt elementum quam. Nullam consectetur metus libero, eget rhoncus justo fringilla vitae. Integer eget sem erat. Praesent aliquet libero eget neque fringilla tincidunt. Aliquam erat volutpat. Nullam mauris sapien, pretium in condimentum in, mollis eu nunc. Nam ut vestibulum arcu. Donec ac posuere mi. Nulla molestie odio nisi, non consectetur ex imperdiet in. Sed blandit eros a sagittis lobortis. Phasellus vestibulum vestibulum neque eget pellentesque. Nam sed massa eu risus tincidunt laoreet.</p>
 <p>Mauris euismod vel mauris et feugiat. Morbi eget velit pellentesque, ullamcorper velit id, accumsan nunc. Maecenas a quam metus. In ac arcu et leo sodales dapibus in sollicitudin mi. Pellentesque facilisis eget erat ac gravida. Etiam tincidunt tempus aliquet. Aliquam magna dolor, rutrum nec posuere a, suscipit nec orci. Quisque aliquet dignissim tellus a faucibus. Nullam accumsan nec magna eu congue.</p>
@@ -54,6 +54,25 @@
             </p>
         </footer>
     </div>
+    
+    <script>
+    function loadjscssfile(filename, filetype){
+        if (filetype=="js"){ //if filename is a external JavaScript file
+            var fileref = document.createElement('script')
+            fileref.setAttribute("type","text/javascript")
+            fileref.setAttribute("src", filename)
+        }
+        else if (filetype=="css"){ //if filename is an external CSS file
+            var fileref = document.createElement("link")
+            fileref.setAttribute("rel", "stylesheet")
+            fileref.setAttribute("type", "text/css")
+            fileref.setAttribute("href", filename)
+        }
+        if (typeof fileref!="undefined") {
+            document.getElementsByTagName("head")[0].appendChild(fileref)
+        }
+    }
+    </script>
     
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </body>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Site Title</title>
+	<title>Mauris euismod vel</title>
 	<meta charset="UTF-8">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' 
           rel='stylesheet' type='text/css'>
@@ -54,6 +54,25 @@
             </p>
         </footer>
     </div>
+    
+    <script>
+    function loadjscssfile(filename, filetype){
+        if (filetype=="js"){ //if filename is a external JavaScript file
+            var fileref = document.createElement('script')
+            fileref.setAttribute("type","text/javascript")
+            fileref.setAttribute("src", filename)
+        }
+        else if (filetype=="css"){ //if filename is an external CSS file
+            var fileref = document.createElement("link")
+            fileref.setAttribute("rel", "stylesheet")
+            fileref.setAttribute("type", "text/css")
+            fileref.setAttribute("href", filename)
+        }
+        if (typeof fileref!="undefined") {
+            document.getElementsByTagName("head")[0].appendChild(fileref)
+        }
+    }
+    </script>
     
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </body>
