@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: 'Droid Serif', serif;
+    line-height: 36px;
+    color: #363636;
+}
+
+a {
+    color: #E64A19;
+}
+
+.site-header a, .site-footer a {
+    color: #999999;
+    text-decoration: none;
+}
+
+.site-tagline {
+    padding-top: 16px;
+    font-size: 16px;
+    color: #999999;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    font-size: 32px;
+}
+
+.post-content {
+    padding-top: 32px;
+}
+
+.container img {
+    width: 100%;
+}
+
+.container article, .post-header, .site-footer-inner, .site-header-inner {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+p {
+    padding-bottom: 12px;
+    font-size: 20px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: #E64A19;
+    line-height: 72px;
+}
+
+.post-header {
+    padding-top: 120px;
+    padding-bottom: 42px;
+}
+
+.post-creation {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding-bottom: 18px;
+    color: #999999;
+    font-weight: 100;
+}
+
+.post-summary-title {
+    font-size: 28px;
+}
+
+.post-summary {
+    padding-top: 26px;
+    padding-bottom: 52px;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.site-footer, .site-header {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.site-header {
+    margin: 0;
+    padding-top: 32px;
+    font-size: 22px;
+}
+
+.site-footer {
+    padding-top: 26px;
+    padding-bottom: 120px;
+}

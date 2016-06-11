@@ -1,0 +1,8 @@
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam orci odio, ornare semper aliquam vel, malesuada nec nunc. Mauris mollis iaculis suscipit. Sed enim lacus, volutpat nec ornare vel, accumsan et ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus rutrum non neque sit amet tristique. Vestibulum est tellus, vulputate eu consectetur quis, aliquet sed enim. Duis eget metus eget velit maximus gravida.
+
+Mauris et neque facilisis, sollicitudin felis ac, scelerisque arcu. Duis accumsan fringilla erat eget dictum. Nullam varius facilisis purus vel ornare. Morbi ornare eros felis, vel volutpat nisi congue a. Ut placerat commodo egestas. Vestibulum rhoncus elit non euismod lacinia. In et nunc sit amet dolor venenatis accumsan sit amet non sapien. Nullam commodo tellus massa, at ornare elit porttitor eget.
+
+Mauris in euismod mauris, id posuere dolor. Cras velit neque, dictum ac tempus vel, accumsan vel justo. Nullam in justo sem. Fusce quis massa nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent euismod ipsum auctor erat venenatis sagittis. Sed facilisis diam eget nisl pulvinar bibendum. Curabitur consectetur massa non diam ullamcorper cursus. Pellentesque pharetra ipsum eu leo faucibus, eu mollis tortor lacinia. Morbi eleifend ex eget justo dapibus porttitor. Maecenas pulvinar facilisis neque, at commodo libero pharetra sed. Donec mollis quis quam lacinia placerat.
+
+# ![alt text][logo]
+# [logo]: {{ assets }}/picture.jpg "Logo Title Text 2"

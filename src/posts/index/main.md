@@ -1,1 +1,0 @@
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum aliquet sagittis. Nam tincidunt pretium ex rhoncus maximus. Nulla aliquam libero at ligula convallis, ut placerat dui faucibus."

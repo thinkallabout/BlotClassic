@@ -1,0 +1,14 @@
+--- 
+title: "Blot"
+tagline: "Build websites faster with Blot"
+author: 
+    name: "Cameron Brown"
+    twitter:
+        handle: "@thinkallabout"
+        url: http://www.twitter.com/thinkallabout
+    github: http://www.github.com/thinkallabout
+sources: 
+  assets: assets/
+  content: content/
+  templates: templates/
+  output: output/

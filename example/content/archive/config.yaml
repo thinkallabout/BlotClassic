@@ -1,0 +1,5 @@
+# This is simply a placeholder that runs the logic
+# on index.html to show a list of blog posts.
+--- 
+name: archive
+template: "archive.html"

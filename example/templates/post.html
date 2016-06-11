@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="post-header">
+    <div class="post-creation">{{ content.post.creation_date }} by 
+        <a href="{{ site.author.twitter.url }}">{{ site.author.name }}</a>
+    </div>
+    <h1>{{ content.post.title }}</h1>
+</header>
+<article>{{ content.body }}</article>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<title>
+        {% if content.post is defined %}
+            {{ content.post.title }} -
+        {% endif %}
+        {{ site.title }} 
+    </title>
+	<meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Roboto:500,300' rel='stylesheet' type='text/css'><link href="{{ assets }}/main.css" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header-inner" style="float: left">
+            <a href="/">home</a>
+            <a href="/archive">archive</a>
+        </div>
+    </header>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="site-footer container">
+        <div class="site-footer-inner">
+            <a href="{{ site.author.github }}">github</a>
+            <a href="{{ site.author.twitter.url }}">{{ site.author.twitter.handle }}</a>
+        </div>
+    </footer>
+</body>
+</html>

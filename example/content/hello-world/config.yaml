@@ -1,0 +1,9 @@
+--- 
+content: hello-world.md
+name: hello-world
+template: "post.html"
+post: 
+  author: "Cameron Brown"
+  title: "Hello, world!"
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam orci odio, ornare semper aliquam vel, malesuada nec nunc. Mauris mollis iaculis suscipit. Sed enim lacus, volutpat nec ornare vel, accumsan et ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+  creation_date: "31 May 2016"
